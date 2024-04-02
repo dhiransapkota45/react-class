@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 
 const DataFetch = () => {
   const [catdata, setCatdata] = useState([]);
@@ -22,8 +22,16 @@ const DataFetch = () => {
       <div>
         {catdata.map((item, index) => {
           return (
-            <div key={index}>
-              {index + 1}.) {item.fact}
+            <div style={{display:"flex"}} key={index}>
+              <div>
+                {index +1}
+              </div>
+              <div>
+                {item.fact}
+              </div>
+              <div>
+                {item.length}
+              </div>
             </div>
           );
         })}
