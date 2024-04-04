@@ -1,8 +1,13 @@
 import React from 'react'
+import NewsHolder from './NewsHolder'
 
 const Business = () => {
   return (
-    <div>Business</div>
+    <div>
+      <div>Welcome to business news</div>
+
+      <NewsHolder />
+    </div>
   )
 }
 
