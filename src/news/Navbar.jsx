@@ -12,7 +12,7 @@ const Navbar = () => {
         justifyContent: "space-between",
       }}
     >
-      <div>logo</div>
+      <NavLink to="/">logo</NavLink>
 
       <div style={{ display: "flex", gap: "10px" }}>
         <NavLink to="/general">general</NavLink>
