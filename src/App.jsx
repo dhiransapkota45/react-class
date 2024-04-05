@@ -10,6 +10,7 @@ import Notfound from "./news/Notfound";
 
 import { createContext } from "react";
 import Comp1 from "./news/Comp1";
+import DynamicRoute from "./news/DynamicRoute";
 
 export const Context = createContext();
 
@@ -39,14 +40,15 @@ const App = () => {
   return (
     <Context.Provider value={{ data: "this is data", age:39 }}>
       {/* <Comp3 data={data} /> */}
-      {/* <Comp3 /> */}
-      <Comp1 />
+      <Comp3 />
+      
       <Navbar />
       <Routes>
         <Route path="/" element={<News />} />
         <Route path="/about" element={<About />} />
         <Route path="/general" element={<General />} />
         <Route path="/business" element={<Business />} />
+        <Route path="/product/:id" element={<DynamicRoute />} />
         <Route path="/entertainment" element={<Entertainmemt />} />
         <Route path="/*" element={<Notfound />} />
       </Routes>
