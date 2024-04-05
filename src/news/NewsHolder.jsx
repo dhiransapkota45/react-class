@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 import NewsCard from "./NewsCard";
 
 const NewsHolder = () => {
-  const [newsdata, setNewsdata] = useState([]);
+  const [newsdata, setNewsdata] = useState([])
 
   const location = useLocation();
   const locationWithoutSlash = location.pathname.slice(1);

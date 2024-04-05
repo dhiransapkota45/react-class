@@ -1,9 +1,4 @@
 import "./App.css";
-import Card from "./Card";
-import Map from "./Map";
-import DataFetch from "./data-fetching/DataFetch";
-import UseEffectExplore from "./hooks/UseEffectExplore";
-import UseState from "./hooks/UseState";
 import About from "./news/About";
 import Business from "./news/Business";
 import Entertainmemt from "./news/Entertainmemt";
@@ -13,9 +8,39 @@ import News from "./news/News";
 import { Routes, Route } from "react-router-dom";
 import Notfound from "./news/Notfound";
 
-const App = () => {
+import { createContext } from "react";
+import Comp1 from "./news/Comp1";
+
+export const Context = createContext();
+
+
+
+const Comp2 = () => {
   return (
     <div>
+      asdf
+      <Comp1  />
+    </div>
+  );
+};
+
+const Comp3 = () => {
+  return (
+    <div>
+      asdfasdf
+      <Comp2  />
+    </div>
+  );
+};
+
+const App = () => {
+  const data = "this is data";
+
+  return (
+    <Context.Provider value={{ data: "this is data", age:39 }}>
+      {/* <Comp3 data={data} /> */}
+      {/* <Comp3 /> */}
+      <Comp1 />
       <Navbar />
       <Routes>
         <Route path="/" element={<News />} />
@@ -25,7 +50,7 @@ const App = () => {
         <Route path="/entertainment" element={<Entertainmemt />} />
         <Route path="/*" element={<Notfound />} />
       </Routes>
-    </div>
+    </Context.Provider>
   );
 };
 

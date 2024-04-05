@@ -13,7 +13,6 @@ const News = () => {
     setNewsdata(newsdata.articles);
     // setCatdata(catfacts.data);
   };
-  console.log(newsdata);
 
   useEffect(() => {
     fetchdata();
